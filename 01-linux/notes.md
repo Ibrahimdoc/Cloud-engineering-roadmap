@@ -19,6 +19,7 @@ Dat 1 - Medium
 - cp cpies a file's contents to a destination.
 - mv moves or renames files.
 - rm deletes files permanently; rm -r deletes directories recursively.
+- rm - deletes directories recursively; checking pwd first prevents catastrophic mistakes.
 - Linux commands fail silently if syntax is wrong.
 
 Key notes: 
