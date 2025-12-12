@@ -11,7 +11,7 @@ Day 1 - Beginner
 Why this matters: 
  Linux commands always act relative to the current directory.
 
-Dat 1 - Medium 
+Day 1 - Medium 
 
 - mkdir creates directories. 
 - touch creates empty files.
@@ -21,6 +21,14 @@ Dat 1 - Medium
 - rm deletes files permanently; rm -r deletes directories recursively.
 - rm - deletes directories recursively; checking pwd first prevents catastrophic mistakes.
 - Linux commands fail silently if syntax is wrong.
+
+Path intuition (core concept)
+
+- Relative paths depend entirely on pwd.
+- Absoltue paths do not depend on context.
+- Using .. to go up and back down is valid but bad practice.
+- Good and clear paths minimize unnecessary movement and maximize clarity.
+
 
 Key notes: 
 cp makes the destination file identical to the source; if the destination already exists,its contents are overwritten without warning.
