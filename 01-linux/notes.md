@@ -16,7 +16,7 @@ Day 1 - Medium
 - mkdir creates directories. 
 - touch creates empty files.
 - echo > file writes content to a file.
-- cp cpies a file's contents to a destination.
+- cp copies a file's contents to a destination.
 - mv moves or renames files.
 - rm deletes files permanently; rm -r deletes directories recursively.
 - rm - deletes directories recursively; checking pwd first prevents catastrophic mistakes.
@@ -25,13 +25,13 @@ Day 1 - Medium
 Path intuition (core concept)
 
 - Relative paths depend entirely on pwd.
-- Absoltue paths do not depend on context.
+- Absolute paths do not depend on context.
 - Using .. to go up and back down is valid but bad practice.
-- Good and clear paths minimize unnecessary movement and maximize clarity.
+- Clear paths minimize unnecessary movement and maximize clarity.
 
 
 Key notes: 
-cp makes the destination file identical to the source; if the destination already exists,its contents are overwritten without warning.
+cp makes the destination file identical to the source; if the destination already exists, its contents are overwritten without warning.
 Mistakes usually come from command structure or wrong assumptions, not the system itself. 
 
 
