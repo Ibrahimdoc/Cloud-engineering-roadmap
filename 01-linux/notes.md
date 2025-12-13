@@ -22,7 +22,7 @@ Day 1 - Medium
 - rm - deletes directories recursively; checking pwd first prevents catastrophic mistakes.
 - Linux commands fail silently if syntax is wrong.
 
-Path intuition (core concept)
+Day 2 -  Path intuition (core concept)
 
 - Relative paths depend entirely on pwd.
 - Absolute paths do not depend on context.
