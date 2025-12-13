@@ -29,6 +29,24 @@ Day 2 -  Path intuition (core concept)
 - Using .. to go up and back down is valid but bad practice.
 - Clear paths minimize unnecessary movement and maximize clarity.
 
+Day 3 - Permissions
+
+- chmod controls access, not intent.
+- Files and directories interpret x differently.
+- Numeric permissions encode intent precisely.
+- Directories require x to be entered.
+- pwd before chmod or rm is non-negotiable 
+
+
+cloud analogy:
+
+chmod = permissions
+
+chown = ownership
+
+IAM = distributed Linux permissions
+
+
 
 Key notes: 
 cp makes the destination file identical to the source; if the destination already exists, its contents are overwritten without warning.
