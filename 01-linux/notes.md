@@ -35,7 +35,17 @@ Day 3 - Permissions
 - Files and directories interpret x differently.
 - Numeric permissions encode intent precisely.
 - Directories require x to be entered.
-- pwd before chmod or rm is non-negotiable 
+- pwd before chmod or rm is non-negotiable
+
+Day 4 - Processes 
+
+- A process is a running instance of a command.
+- Foreground processes block the shell; background processes do not.
+- ps shows a snapshot of running processes.
+- top shows live CPU and memory pressure.
+- servers run processes unateended; user sessions are not required.
+
+ 
 
 
 cloud analogy:
