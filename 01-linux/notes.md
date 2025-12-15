@@ -1,4 +1,4 @@
-.Day -0 - Git setup complete.
+p.Day -0 - Git setup complete.
 Created roadmap structure and connected to Github.
 
 Day 1 - Beginner 
@@ -39,11 +39,13 @@ Day 3 - Permissions
 
 Day 4 - Processes 
 
-- A process is a running instance of a command.
-- Foreground processes block the shell; background processes do not.
-- ps shows a snapshot of running processes.
-- top shows live CPU and memory pressure.
-- servers run processes unateended; user sessions are not required.
+- Processes are running programs identified by PID.
+- PS = snapshot; top =live system view.
+- Foreground blocks the shell; background does not.
+- jobs shows shell-local processes only.
+- Kill sends signals; -9 is last resort.
+
+
 
  
 
