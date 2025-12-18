@@ -45,26 +45,16 @@ Day 4 - Processes
 - jobs shows shell-local processes only.
 - Kill sends signals; -9 is last resort.
 
+Day 5 - Networking
+
+- ip a shows interfaces + IP scope (loopback vs private IP)
+- ip route shows where traffic exits (default via =gateway)
+- ss -tulpen shows local services listening (not internet access)
+- cloud mapping:Listen(host) + 5G/NACL (network) both must allow.
+
 
 
  
-
-
-cloud analogy:
-
-chmod = permissions
-
-chown = ownership
-
-IAM = distributed Linux permissions
-
-
-
-Key notes: 
-cp makes the destination file identical to the source; if the destination already exists, its contents are overwritten without warning.
-Mistakes usually come from command structure or wrong assumptions, not the system itself. 
-
-
 
 
 
