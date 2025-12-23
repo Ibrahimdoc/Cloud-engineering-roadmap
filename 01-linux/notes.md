@@ -48,9 +48,11 @@ Day 4 - Processes
 Day 5 - Networking
 
 - ip a shows interfaces + IP scope (loopback vs private IP)
-- ip route shows where traffic exits (default via =gateway)
+- ip route shows the routing table - the OS's map of "which path to take for which destination."
 - ss -tulpen shows local services listening (not internet access)
 - cloud mapping:Listen(host) + 5G/NACL (network) both must allow.
+- DNS turns names into IPSd (getent hosts,dig).
+- ss -tulpen shows listening ports; AWS SG/NACL controls reachability.
 
 
 
