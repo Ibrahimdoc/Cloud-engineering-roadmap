@@ -54,7 +54,12 @@ Day 5 - Networking
 - DNS turns names into IPSd (getent hosts,dig).
 - ss -tulpen shows listening ports; AWS SG/NACL controls reachability.
 
+Day 6 - Log triage (pipes, grep, tail, redirects)
 
+- Less paginates large files; search inside logs quickly. 
+- tail -n shows latest context; tail -f follows live logs.
+- grep filters signal from noise; pipe chain filters.
+- > overwrites, >> appends; 2> captures errors (stderr).
 
  
 
