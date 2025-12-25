@@ -62,6 +62,16 @@ Day 6 - Log triage (pipes, grep, tail, redirects)
 - > overwrites, >> appends; 2> captures errors (stderr).
 
  
+Day 7 - Packages + Services (apt + systemctl + journalctl) {nginx}
 
-
-
+- apt = installs software onto disk: apt update (refresh index), apt install <pkg>.
+- systemctl = controls background services (daemons): status/start/stop/restart.
+- enabled ≠ running: "enabled" = starts on boot; "active (running)" = running now.
+- nginx uses ExecStartPre "nginx -t" to test config before starting (prevents bad config start).
+- Proof checks:
+  - curl -I http://127.0.0.1 = HTTP response proof
+  - ss -lntp | grep ':80' = listening socket proof
+- Logs for a service:
+  - journalctl -u nginx -n 50
+  - journalctl -u nginx -p err -n 50
+- Break/fix loop: stop nginx => curl fails; start nginx => curl 200 OK.
