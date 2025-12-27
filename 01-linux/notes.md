@@ -75,3 +75,22 @@ Day 7 - Packages + Services (apt + systemctl + journalctl) {nginx}
   - journalctl -u nginx -n 50
   - journalctl -u nginx -p err -n 50
 - Break/fix loop: stop nginx => curl fails; start nginx => curl 200 OK.
+
+
+Day 7 - SSH + Keys (cloud-critical)
+
+- SSH = how you access/manage Linux servers (EC2/VMs) remotely.
+- Keypair model:
+  - Private key stays on your machine (never share).
+  - Public key goes on the server under the target user: ~/.ssh/authorized_keys (per-user access).
+- Permissions intuition (SSH is strict):
+  - Directory `x` = traverse/enter.
+  - ~/.ssh = 700, private key = 600, authorized_keys = 600.
+- Service + port checks:
+  - systemctl enable --now ssh (start now + on reboot)
+  - ss confirms listening on :22
+- SSH triage (3 layers):
+  1) Network path (SG/NACL/route allows 22)
+  2) Server daemon (ssh running + listening)
+  3) Auth (right user/key + key in authorized_keys + perms correct)
+- Proof lab: enabled SSH server, verified :22 listening, SSH’d into localhost using key auth.
