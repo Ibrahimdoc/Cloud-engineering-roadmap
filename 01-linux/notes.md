@@ -81,3 +81,15 @@ Day 7 — SSH + Keys (cloud-critical)
   2) Server daemon (ssh running + listening)
   3) Auth (right user/key + key in authorized_keys + perms correct)
 - Proof lab: enabled SSH server, verified :22 listening, SSH’d into localhost using key auth.
+
+Day 8 — Disk triage (df/du)
+
+- df -h checks filesystem usage; focus on mountpoints (especially /).
+- Incident pattern: “disk full” commonly comes from /var (logs/caches/app state).
+- Drill-down workflow:
+  1) df -h (find full mount)
+  2) sudo du -xhd1 / | sort -h (top-level hogs; -x avoids other filesystems)
+  3) drill into biggest directory (e.g., /var → /var/log → /var/log/journal)
+- systemd journal can consume space; verify with:
+  - journalctl --disk-usage
+  - (control growth with vacuum policies when appropriate)
