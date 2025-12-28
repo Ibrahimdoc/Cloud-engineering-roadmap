@@ -93,3 +93,9 @@ Day 8 — Disk triage (df/du)
 - systemd journal can consume space; verify with:
   - journalctl --disk-usage
   - (control growth with vacuum policies when appropriate)
+
+Day 9 — Minimal scripting (evidence pack)
+
+- Built a bash script to collect repeatable “evidence packs” (system/disk/memory/network/ports) into a timestamped folder.
+- Purpose: speed + consistency in debugging (same baseline every time); attach outputs to tickets/runbooks.
+- Key mechanics: shebang selects bash, chmod +x makes it runnable, redirect output to files for evidence.
