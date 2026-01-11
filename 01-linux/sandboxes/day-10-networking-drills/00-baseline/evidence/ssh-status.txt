@@ -1,0 +1,31 @@
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-01-10 18:51:48 GMT; 11min ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 177 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 202 (sshd)
+      Tasks: 1 (limit: 9362)
+     Memory: 2.0M (peak: 2.7M)
+        CPU: 52ms
+     CGroup: /system.slice/ssh.service
+             └─202 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Jan 10 18:51:48 mizawa systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Jan 10 18:51:48 mizawa sshd[202]: Server listening on 0.0.0.0 port 22.
+Jan 10 18:51:48 mizawa sshd[202]: Server listening on :: port 22.
+Jan 10 18:51:48 mizawa systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+
+● ssh.socket - OpenBSD Secure Shell server socket
+     Loaded: loaded (/usr/lib/systemd/system/ssh.socket; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-01-10 18:51:48 GMT; 11min ago
+   Triggers: ● ssh.service
+     Listen: 0.0.0.0:22 (Stream)
+             [::]:22 (Stream)
+      Tasks: 0 (limit: 9362)
+     Memory: 12.0K (peak: 264.0K)
+        CPU: 1ms
+     CGroup: /system.slice/ssh.socket
+
+Jan 10 18:51:48 mizawa systemd[1]: Listening on ssh.socket - OpenBSD Secure Shell server socket.

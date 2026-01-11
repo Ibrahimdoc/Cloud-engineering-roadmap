@@ -1,0 +1,2 @@
+drwx------ 2 amaj amaj 4096 Dec 27 01:05 /home/amaj/.ssh
+-rwx------ 1 amaj amaj 179 Dec 27 01:05 /home/amaj/.ssh/authorized_keys

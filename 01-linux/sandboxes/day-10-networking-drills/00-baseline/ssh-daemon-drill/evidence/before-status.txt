@@ -1,0 +1,33 @@
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-01-10 22:49:46 GMT; 21min ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 2343 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 2345 (sshd)
+      Tasks: 1 (limit: 9362)
+     Memory: 1.2M (peak: 4.5M)
+        CPU: 48ms
+     CGroup: /system.slice/ssh.service
+             └─2345 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Jan 10 22:49:46 mizawa systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Jan 10 22:49:46 mizawa sshd[2345]: Server listening on 0.0.0.0 port 22.
+Jan 10 22:49:46 mizawa sshd[2345]: Server listening on :: port 22.
+Jan 10 22:49:46 mizawa systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Jan 10 22:49:57 mizawa sshd[2352]: Accepted publickey for amaj from 127.0.0.1 port 46162 ssh2: ED25519 SHA256:vieFNrCSUigEfXCw2vaXVRwhS+qCIIUTMRaYXEKItCs
+Jan 10 22:49:57 mizawa sshd[2352]: pam_unix(sshd:session): session opened for user amaj(uid=1000) by amaj(uid=0)
+
+● ssh.socket - OpenBSD Secure Shell server socket
+     Loaded: loaded (/usr/lib/systemd/system/ssh.socket; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-01-10 22:49:46 GMT; 21min ago
+   Triggers: ● ssh.service
+     Listen: 0.0.0.0:22 (Stream)
+             [::]:22 (Stream)
+      Tasks: 0 (limit: 9362)
+     Memory: 8.0K (peak: 264.0K)
+        CPU: 1ms
+     CGroup: /system.slice/ssh.socket
+
+Jan 10 22:49:46 mizawa systemd[1]: Listening on ssh.socket - OpenBSD Secure Shell server socket.

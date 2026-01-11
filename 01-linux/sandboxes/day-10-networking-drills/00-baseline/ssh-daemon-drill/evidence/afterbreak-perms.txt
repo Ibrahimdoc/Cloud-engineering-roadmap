@@ -1,0 +1,1 @@
+-rwxrwxrwx 1 amaj amaj 179 Dec 27 01:05 /home/amaj/.ssh/authorized_keys

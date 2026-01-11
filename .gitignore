@@ -1,3 +1,10 @@
 # Local artifacts
 *.log
-01-linux/sandboxes/
+
+# Ignore all sandboxes by default
+01-linux/sandboxes/*
+
+# But TRACK Day 10 drills + evidence
+!01-linux/sandboxes/day-10-networking-drills/
+!01-linux/sandboxes/day-10-networking-drills/**
+
