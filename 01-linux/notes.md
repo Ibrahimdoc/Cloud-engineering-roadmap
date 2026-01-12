@@ -99,3 +99,31 @@ Day 9 — Minimal scripting (evidence pack)
 - Built a bash script to collect repeatable “evidence packs” (system/disk/memory/network/ports) into a timestamped folder.
 - Purpose: speed + consistency in debugging (same baseline every time); attach outputs to tickets/runbooks.
 - Key mechanics: shebang selects bash, chmod +x makes it runnable, redirect output to files for evidence.
+
+
+Day 10 - Networking Consolidation (Operator Drills)
+
+- Goal: build reflex to diagnose connectivity issues (no theory dumps).
+- 3-layer model: Network path → Daemon/service → Auth.
+- Rule: every command must produce signal → interpretation → action → proof.
+
+Daemon layer (service not listening)
+- ss -lntp | grep ':22' = proves whether SSH is listening on port 22.
+- systemctl status/start/stop ssh (+ ssh.socket) = controls/inspects the SSH service.
+- If :22 is NOT listening, keys don’t matter yet → fix daemon first (start ssh/ssh.socket).
+
+Auth layer (port listening but denied)
+- If :22 is listening but SSH says “Permission denied (publickey)” → auth/permissions issue.
+- Meaning: sshd didn’t accept any key for that user (wrong user, missing key, wrong key, or insecure perms).
+- Permissions must be strict:
+  - ~/.ssh = 700
+  - ~/.ssh/authorized_keys = 600
+  - client private key (e.g. ~/.ssh/id_ed25519) = 600
+- SSH may ignore authorized_keys if it’s writable by group/others (e.g. chmod 777) for security.
+
+Network-path quick classifier (WSL-safe)
+- Timeout (“Connection timed out”) tends to indicate network-path issues.
+- Connection refused often indicates daemon/service not listening.
+- Permission denied indicates auth issue (assuming port is reachable).
+
+
